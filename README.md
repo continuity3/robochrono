@@ -2,7 +2,7 @@
 
 A static research website for **RoboChrono: A Real Robot Benchmark for Streaming Task Understanding**.
 
-This edition builds on the original [li-zzmm/robochrono](https://github.com/li-zzmm/robochrono) project page and its recordings. The publication repository is [continuity3/robochrono](https://github.com/continuity3/robochrono).
+This edition builds on the original [li-zzmm/robochrono](https://github.com/li-zzmm/robochrono) project page and its recordings. The public website source is maintained in [continuity3/robochrono](https://github.com/continuity3/robochrono). The paper and research code release are being prepared; their website entries display **Coming soon**.
 
 ## Preview locally
 
@@ -21,7 +21,7 @@ Then open http://127.0.0.1:8765. No installation or build step is required. The 
 - `script.js`: embodiment tabs, continuous video gallery, visibility-aware videos, motion controls, video/figure dialogs, and citation copying.
 - `assets/brands/`: supplied GIM and Tianji marks. The Tianji SVG frames an embedded, unchanged original image.
 - `assets/figures/`: figures extracted from the supplied manuscript and separate figure PDFs. SVG text is outlined so it renders without external fonts.
-- `assets/paper/robochrono.pdf`: the supplied manuscript, linked by the Paper buttons.
+- `assets/paper/robochrono.pdf`: the supplied manuscript, retained in the repository but no longer linked from the website while the paper release is being prepared.
 - `assets/videos/`: original repository recordings; Stack Cubes previews are already encoded at 2× speed. The Tianji hero excerpt uses seconds 16–34 of `stack-cubes-tianji-2x.mp4`, preserving its 2× speed.
 - `assets/videos/gallery/`: trimmed, silent web previews from `yyyyywv/egocentric`, with posters and a per-clip source manifest. Gallery excerpts play at their original speed and are attributed under CC BY-NC 4.0.
 
@@ -31,11 +31,11 @@ Displayed results are scoped to the manuscript's reported evaluation. Model cove
 
 ## GitHub Pages
 
-The publication target is [continuity3.github.io/robochrono](https://continuity3.github.io/robochrono/). In the [repository Pages settings](https://github.com/continuity3/robochrono/settings/pages), select **Deploy from a branch**, then **main** and **/ (root)**. The root contains `.nojekyll` and uses repository-relative asset paths, so no build step is required. The repository links and absolute social-image/citation URLs in `index.html` use this target.
+The publication target is [continuity3.github.io/robochrono](https://continuity3.github.io/robochrono/). In the [repository Pages settings](https://github.com/continuity3/robochrono/settings/pages), select **Deploy from a branch**, then **main** and **/ (root)**. The root contains `.nojekyll` and uses repository-relative asset paths, so no build step is required. The absolute social-image and citation URLs in `index.html` use this target.
 
 The capability plot is redrawn from all 18 Table 3 rows because the supplied Figure 4 plots the Astra points inconsistently with that table. The original supplied figure remains available in the assets; the displayed `model-capabilities-table3.svg` explicitly identifies its source and has a companion JSON data file.
 
-The dataset link points to the existing GIM-RoboLab RoboChrono collection. The GitHub link points to this project-page repository.
+The dataset link points to the existing GIM-RoboLab RoboChrono collection. Paper and GitHub entries are inactive **Coming soon** labels until the paper and research code are ready for release. The public website source repository remains available separately.
 
 ## Browser checks
 

@@ -1336,6 +1336,44 @@ h2 {
   color:var(--accent);
 }
 
+.coming-soon {
+  cursor:default;
+}
+
+.release-badge {
+  flex-shrink:0;
+  padding:4px 7px;
+  border:1px solid currentColor;
+  font:10px/1.2 var(--mono);
+  white-space:nowrap;
+}
+
+.header-link.coming-soon {
+  flex-direction:column;
+  align-items:flex-end;
+  gap:3px;
+}
+
+.header-link.coming-soon .release-badge {
+  font-size:9px;
+  padding:2px 5px;
+}
+
+.header-link.coming-soon:hover,
+.resource-links>.coming-soon:hover {
+  color:inherit;
+}
+
+.button.coming-soon:hover {
+  transform:none;
+  background:var(--accent);
+}
+
+.resource-links .release-badge {
+  margin-left:auto;
+  color:var(--accent);
+}
+
 .citation-card {
   background:var(--panel);
   border:1px solid var(--line);
