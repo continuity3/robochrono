@@ -212,6 +212,71 @@
   });
   updateHeroTime();
 
+  const heroSwitcher = document.getElementById("hero-switcher");
+  const heroPanel = document.getElementById("hero-player");
+  const heroCamera = document.getElementById("hero-camera");
+  const heroTabs = [...document.querySelectorAll("button[data-hero-platform]")];
+  if (heroSwitcher && heroPanel && heroCamera && heroVideo && heroTabs.length > 1 && heroTabs.every((tab) => tab.id && tab.dataset.video && tab.dataset.poster && tab.dataset.camera && tab.dataset.label)) {
+    let selectedHero = heroTabs.find((tab) => tab.getAttribute("aria-selected") === "true") || heroTabs[0];
+    let pendingHeroSource = "";
+    let heroSwitchPending = false;
+    let resumeHeroPlayback = false;
+
+    function updateHeroSelection() {
+      heroTabs.forEach((tab) => {
+        const selected = tab === selectedHero;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        tab.classList.toggle("active", selected);
+      });
+      heroPanel.setAttribute("aria-labelledby", selectedHero.id);
+    }
+
+    function selectHero(tab) {
+      if (tab === selectedHero) return;
+      // Preserve native pause and an in-flight selection's playback intent.
+      if (!heroSwitchPending) {
+        resumeHeroPlayback = !heroVideo.paused || heroVideo.readyState < HTMLMediaElement.HAVE_CURRENT_DATA;
+      }
+      selectedHero = tab;
+      heroSwitchPending = true;
+      pendingHeroSource = new URL(tab.dataset.video, document.baseURI).href;
+      updateHeroSelection();
+      heroVideo.pause();
+      heroVideo.src = tab.dataset.video;
+      heroVideo.poster = tab.dataset.poster;
+      heroVideo.setAttribute("aria-label", tab.dataset.label);
+      heroCamera.textContent = tab.dataset.camera;
+      heroVideo.load();
+      if (heroProgress) heroProgress.style.width = "0%";
+      if (heroTime) heroTime.textContent = "00:00 / 00:00";
+    }
+
+    heroVideo.addEventListener("loadedmetadata", () => {
+      // One listener follows the latest source, including rapid repeated switches.
+      if (!heroSwitchPending || heroVideo.currentSrc !== pendingHeroSource || heroVideo.readyState < HTMLMediaElement.HAVE_METADATA) return;
+      heroSwitchPending = false;
+      updateHeroTime();
+      if (resumeHeroPlayback) updatePlayback(heroVideo);
+    });
+    heroTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectHero(tab));
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % heroTabs.length;
+        else if (event.key === "ArrowLeft") nextIndex = (index - 1 + heroTabs.length) % heroTabs.length;
+        else if (event.key === "Home") nextIndex = 0;
+        else if (event.key === "End") nextIndex = heroTabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectHero(heroTabs[nextIndex]);
+        heroTabs[nextIndex].focus();
+      });
+    });
+    updateHeroSelection();
+    heroSwitcher.hidden = false;
+  }
+
   const galleryToggle = document.getElementById("gallery-toggle");
   const demoDialog = document.getElementById("demo-dialog");
   const demoVideo = document.getElementById("demo-video");

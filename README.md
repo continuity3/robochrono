@@ -18,11 +18,12 @@ Then open http://127.0.0.1:8765. No installation or build step is required. The 
 
 - `index.html`: paper summary, authors, affiliations, capabilities, findings, and citation.
 - `styles.css`: white visual theme, responsive layout, and reduced-motion styles.
-- `script.js`: embodiment tabs, continuous video gallery, visibility-aware videos, motion controls, video/figure dialogs, and citation copying.
+- `script.js`: Tianji/GIM hero preview switching, embodiment tabs, continuous video gallery, visibility-aware videos, motion controls, video/figure dialogs, and citation copying.
 - `assets/brands/`: supplied Tianji, GIM, and Shenzhen University marks, displayed in that order. The Tianji SVG frames an embedded, unchanged original image; the Shenzhen University SVG is extracted from the supplied Illustrator artwork.
 - `assets/figures/`: figures extracted from the supplied manuscript and separate figure PDFs. SVG text is outlined so it renders without external fonts.
 - `assets/paper/robochrono.pdf`: the supplied manuscript, retained in the repository but no longer linked from the website while the paper release is being prepared.
-- `assets/videos/`: original repository recordings; Stack Cubes previews are already encoded at 2× speed. The Tianji hero excerpt uses seconds 16–34 of `stack-cubes-tianji-2x.mp4`, preserving its 2× speed.
+- `assets/videos/`: original repository recordings; Stack Cubes previews are already encoded at 2× speed. The Tianji hero excerpt uses seconds 16–34 of `stack-cubes-tianji-2x.mp4`, preserving its 2× speed. The hero defaults to Tianji and can switch to the existing 20-second `stack-cubes-gim-main-2x.mp4` recording using the thumbnail tabs below the video.
+- `assets/images/gim-hero.jpg`: GIM preview thumbnail extracted at 6 seconds from the original Stack Cubes recording.
 - `assets/videos/gallery/`: trimmed, silent web previews from `yyyyywv/egocentric`, with posters and a per-clip source manifest. Gallery excerpts play at their original speed and are attributed under CC BY-NC 4.0.
 
 The author list follows the supplied author screenshot, with Shihao Li placed after Yiyang Ma. The first seven authors are marked as equal contributors; Zhuo Xu, Long Chen, and Ruoxiang Li are marked as corresponding authors. Affiliations incorporate the author-requested updates: Yuzhou Wu lists Tianji Tec. and Shenzhen University; Longteng Fan, Shihao Li, Yifan Wu, Zichen Zhang, Ruiqi Yang, Weibin Kong, Yihang Xu, Haoran Liu, Tao Xu, Zhuo Xu, and Long Chen list General Intelligence Machine only.

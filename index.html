@@ -12,7 +12,7 @@
   <meta property="og:image" content="https://continuity3.github.io/robochrono/assets/images/logo-transparent.png">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="assets/images/logo-transparent.png" type="image/png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=hero-platforms-1">
 </head>
 <body>
   <a class="skip-link" href="#overview">Skip to content</a>
@@ -33,9 +33,18 @@
         <a class="text-link hero-jump" href="#in-motion"><span class="play-icon" aria-hidden="true">▷</span> See the robots in action <span aria-hidden="true">↓</span></a>
       </div>
       <div class="stream-console">
-        <div class="console-bar"><span><i class="status-dot" aria-hidden="true"></i> OBSERVATION STREAM</span><span>TIANJI / CAM 01</span></div>
+        <div class="console-bar"><span><i class="status-dot" aria-hidden="true"></i> OBSERVATION STREAM</span><span id="hero-camera">TIANJI / CAM 01</span></div>
+        <div id="hero-player" role="tabpanel" aria-labelledby="hero-tab-tianji">
         <div class="hero-feed"><video id="hero-video" poster="assets/images/tianji-hero.jpg" data-playable muted loop playsinline controls preload="auto" aria-label="Tianji stacking cubes, recorded preview at twice original speed"><source src="assets/videos/tianji-hero-2x.mp4" type="video/mp4"></video><div class="feed-corner top-left" aria-hidden="true"></div><div class="feed-corner bottom-right" aria-hidden="true"></div><span class="feed-label">STACK CUBES <span>2× PREVIEW</span></span><div class="scanline" aria-hidden="true"></div></div>
         <div class="console-timeline"><div class="time-ticks" aria-hidden="true"><span>PAST</span><span>OBSERVATION HISTORY</span><span>NOW</span></div><div class="playback-track"><span id="hero-progress"></span></div><div class="console-bottom"><output id="hero-time" aria-live="off" aria-label="Video playback time">00:00 / —</output><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div></div>
+        </div>
+        <div id="hero-switcher" class="hero-switcher" hidden>
+          <div class="hero-switcher-heading"><span class="micro-label">SWITCH PLATFORM</span><span>Same task. Two robots.</span></div>
+          <div class="hero-platform-tabs" role="tablist" aria-label="Choose a robot preview">
+            <button id="hero-tab-tianji" class="hero-option" type="button" role="tab" aria-selected="true" aria-controls="hero-player" tabindex="0" data-hero-platform="tianji" data-video="assets/videos/tianji-hero-2x.mp4" data-poster="assets/images/tianji-hero.jpg" data-camera="TIANJI / CAM 01" data-label="Tianji stacking cubes, recorded preview at twice original speed"><img src="assets/images/tianji-hero.jpg" alt="" width="80" height="50"><span class="hero-option-copy"><strong>Tianji</strong><span>Stack Cubes · 2×</span></span><span class="hero-option-dot" aria-hidden="true"></span></button>
+            <button id="hero-tab-gim" class="hero-option" type="button" role="tab" aria-selected="false" aria-controls="hero-player" tabindex="-1" data-hero-platform="gim" data-video="assets/videos/stack-cubes-gim-main-2x.mp4" data-poster="assets/images/gim-hero.jpg" data-camera="GIM / CAM 01" data-label="GIM stacking cubes, recorded preview at twice original speed"><img src="assets/images/gim-hero.jpg" alt="" width="80" height="50"><span class="hero-option-copy"><strong>GIM</strong><span>Stack Cubes · 2×</span></span><span class="hero-option-dot" aria-hidden="true"></span></button>
+          </div>
+        </div>
         <div class="console-caption"><span class="crosshair" aria-hidden="true">+</span> No future frames. Only the story so far.</div>
       </div>
       <div class="hero-coordinate" aria-hidden="true">01 / OBSERVE → REASON → ANTICIPATE</div>
@@ -129,6 +138,6 @@
   <footer class="footer shell"><a class="brand" href="#top">RoboChrono<span class="brand-period">.</span></a><span>Real robots. A world in motion.</span><a href="#top">Back to the present <span aria-hidden="true">↑</span></a></footer>
   <dialog id="figure-dialog" aria-label="Expanded paper figure"><button id="figure-close" type="button" aria-label="Close expanded figure">Close ×</button><img id="figure-full" alt=""><p id="figure-caption"></p></dialog>
   <dialog id="demo-dialog" aria-labelledby="demo-title"><div class="demo-dialog-head"><div><p id="demo-kind" class="micro-label"></p><h3 id="demo-title"></h3></div><button id="demo-close" type="button" aria-label="Close video preview">Close ×</button></div><video id="demo-video" controls playsinline muted preload="none"></video><div class="demo-dialog-footer"><span>Recorded dataset preview</span><a id="demo-source" target="_blank" rel="noopener noreferrer">View source recording ↗</a></div></dialog>
-  <script src="script.js"></script>
+  <script src="script.js?v=hero-platforms-1"></script>
 </body>
 </html>
