@@ -19,7 +19,7 @@ Then open http://127.0.0.1:8765. No installation or build step is required. The 
 - `index.html`: paper summary, authors, affiliations, capabilities, findings, and citation.
 - `styles.css`: white visual theme, responsive layout, and reduced-motion styles.
 - `script.js`: embodiment tabs, continuous video gallery, visibility-aware videos, motion controls, video/figure dialogs, and citation copying.
-- `assets/brands/`: supplied GIM and Tianji marks. The Tianji SVG frames an embedded, unchanged original image.
+- `assets/brands/`: supplied Tianji, GIM, and Shenzhen University marks, displayed in that order. The Tianji SVG frames an embedded, unchanged original image; the Shenzhen University SVG is extracted from the supplied Illustrator artwork.
 - `assets/figures/`: figures extracted from the supplied manuscript and separate figure PDFs. SVG text is outlined so it renders without external fonts.
 - `assets/paper/robochrono.pdf`: the supplied manuscript, retained in the repository but no longer linked from the website while the paper release is being prepared.
 - `assets/videos/`: original repository recordings; Stack Cubes previews are already encoded at 2× speed. The Tianji hero excerpt uses seconds 16–34 of `stack-cubes-tianji-2x.mp4`, preserving its 2× speed.

@@ -677,7 +677,7 @@ em {
 .partner-logos {
   display:flex;
   align-items:center;
-  gap:32px;
+  gap:24px;
 }
 
 .partner-logo {
@@ -689,6 +689,12 @@ em {
 .partner-logo img {
   object-fit:contain;
   mix-blend-mode:multiply;
+}
+
+.szu-logo img {
+  width:220px;
+  height:64px;
+  mix-blend-mode:normal;
 }
 
 .partner-divider {
@@ -1559,6 +1565,13 @@ h2 {
   }
   .partner-row {
     padding:22px;
+    flex-direction:column;
+  }
+  .partner-row>.micro-label {
+    text-align:center;
+  }
+  .partner-row>.micro-label br {
+    display:none;
   }
   .partner-logos {
     gap:20px;
@@ -1671,9 +1684,13 @@ h2 {
     margin-top:0;
   }
   .partner-logos {
-    gap:20px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,.8fr) auto minmax(0,1fr);
+    gap:clamp(8px,2vw,20px);
+    width:100%;
   }
   .partner-logo img {
+    width:100%;
     max-width:165px;
   }
   .split-heading {
@@ -1906,20 +1923,28 @@ h2 {
     display:none;
   }
   .partner-logos {
-    gap:24px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
     width:100%;
     justify-content:center;
   }
   .partner-logo.gim-logo img {
-    width:85px;
-    height:53px;
+    width:110px;
+    height:65px;
   }
   .tianji-logo img {
-    width:155px;
+    width:180px;
     height:46px;
+    max-width:100%;
+  }
+  .szu-logo img {
+    width:220px;
+    height:64px;
+    max-width:100%;
   }
   .partner-divider {
-    font-size:15px;
+    display:none;
   }
   .section {
     padding-block:60px;
