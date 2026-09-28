@@ -25,7 +25,7 @@ Then open http://127.0.0.1:8765. No installation or build step is required. The 
 - `assets/videos/`: original repository recordings; Stack Cubes previews are already encoded at 2× speed. The Tianji hero excerpt uses seconds 16–34 of `stack-cubes-tianji-2x.mp4`, preserving its 2× speed.
 - `assets/videos/gallery/`: trimmed, silent web previews from `yyyyywv/egocentric`, with posters and a per-clip source manifest. Gallery excerpts play at their original speed and are attributed under CC BY-NC 4.0.
 
-The author list follows the supplied author screenshot, with Shihao Li placed after Yiyang Ma. The first seven authors are marked as equal contributors; Zhuo Xu, Long Chen, and Ruoxiang Li are marked as corresponding authors.
+The author list follows the supplied author screenshot, with Shihao Li placed after Yiyang Ma. The first seven authors are marked as equal contributors; Zhuo Xu, Long Chen, and Ruoxiang Li are marked as corresponding authors. Affiliations incorporate the author-requested updates: Yuzhou Wu lists Tianji Tec. and Shenzhen University; Longteng Fan, Shihao Li, Yifan Wu, Zichen Zhang, Ruiqi Yang, Weibin Kong, Yihang Xu, Haoran Liu, Tao Xu, Zhuo Xu, and Long Chen list General Intelligence Machine only.
 
 Displayed results are scoped to the manuscript's reported evaluation. Model coverage and aggregation differ; the visual-evidence ablation uses five open-weight models on a balanced subset of 312 stems.
 
