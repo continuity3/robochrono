@@ -2,7 +2,7 @@
 
 A static research website for **RoboChrono: A Real Robot Benchmark for Streaming Task Understanding**.
 
-This edition builds on the original [li-zzmm/robochrono](https://github.com/li-zzmm/robochrono) project page and its recordings. The public website source is maintained in [continuity3/robochrono](https://github.com/continuity3/robochrono). The paper and research code release are being prepared; their website entries display **Coming soon**.
+This edition builds on the original [li-zzmm/robochrono](https://github.com/li-zzmm/robochrono) project page and its recordings. The public website source is maintained in [continuity3/robochrono](https://github.com/continuity3/robochrono). The website’s GitHub entries link to the benchmark repository, [mfan-res/ROBOCHRONO](https://github.com/mfan-res/ROBOCHRONO). The paper release is being prepared; its website entries display **Coming soon**.
 
 ## Preview locally
 
@@ -36,7 +36,7 @@ The publication target is [continuity3.github.io/robochrono](https://continuity3
 
 The capability plot is redrawn from all 18 Table 3 rows because the supplied Figure 4 plots the Astra points inconsistently with that table. The original supplied figure remains available in the assets; the displayed `model-capabilities-table3.svg` explicitly identifies its source and has a companion JSON data file.
 
-The dataset entries list [Tianji Dataset (gimai/RC-Tianji)](https://huggingface.co/datasets/gimai/RC-Tianji) first, followed by [GIM Dataset (gimai/RC-GIM)](https://huggingface.co/datasets/gimai/RC-GIM), in both the hero and resources sections. Paper and GitHub entries are inactive **Coming soon** labels until the paper and research code are ready for release. The public website source repository remains available separately.
+The dataset entries list [Tianji Dataset (gimai/RC-Tianji)](https://huggingface.co/datasets/gimai/RC-Tianji) first, followed by [GIM Dataset (gimai/RC-GIM)](https://huggingface.co/datasets/gimai/RC-GIM), in both the hero and resources sections. GitHub entries link to the benchmark repository, [mfan-res/ROBOCHRONO](https://github.com/mfan-res/ROBOCHRONO). Paper entries remain inactive **Coming soon** labels while the paper release is being prepared. The public website source repository remains available separately.
 
 ## Browser checks
 
