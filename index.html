@@ -1,113 +1,134 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RoboChrono — Real-Robot Temporal Understanding</title>
-    <meta name="description" content="RoboChrono is a real-robot benchmark for temporal task understanding across four manipulation embodiments.">
-    <link rel="icon" type="image/png" href="assets/images/logo-transparent.png">
-    <link rel="apple-touch-icon" href="assets/images/logo-transparent.png">
-    <meta property="og:title" content="RoboChrono — Real-Robot Temporal Understanding">
-    <meta property="og:description" content="A real-robot benchmark for streaming task understanding across four manipulation embodiments.">
-    <meta property="og:image" content="https://li-zzmm.github.io/robochrono/assets/images/logo-transparent.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://li-zzmm.github.io/robochrono/assets/images/logo-transparent.png">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top"><img class="site-logo" src="assets/images/logo-transparent.png" alt="RoboChrono logo"><span>RoboChrono</span></a>
-      <nav aria-label="Primary navigation"><a href="#overview">Overview</a><a href="#embodiments">Embodiments</a><a href="#coverage">Coverage</a><a href="#task-video">Task Video</a><a href="#results">Results</a><a href="#citation">Citation</a></nav>
-    </header>
-    <main id="top">
-      <section class="hero hero-simple">
-        <img class="hero-feature-logo" src="assets/images/logo-transparent.png" alt="RoboChrono dataset logo">
-        <div class="hero-copy">
-          <p class="eyebrow">Real robot video benchmark · 2026</p>
-          <h1>Robo<span>Chrono</span></h1>
-          <p class="hero-lede">A real-robot benchmark for <em>streaming</em> task understanding.</p>
-          <p class="hero-description">Understand what is happening now, what comes next, and when it happens—across robot hands, grippers, and egocentric human demonstrations.</p>
-          <div class="action-row"><a class="button primary" href="1.pdf" target="_blank" rel="noopener">Paper figures</a><a class="button" href="https://huggingface.co/datasets/GIM-RoboLab/robochrono/tree/main" target="_blank" rel="noopener">Hugging Face data</a><a class="button" href="#task-video">Watch examples</a></div>
-        </div>
-      </section>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fcfcfa">
+  <title>RoboChrono — A Real Robot Benchmark for Streaming Task Understanding</title>
+  <meta name="description" content="Understanding robot actions as they unfold. Seven capabilities across 39 manipulation scenarios and 34,713 evaluation instances.">
+  <meta property="og:title" content="RoboChrono — Understanding actions as they unfold.">
+  <meta property="og:description" content="A real robot benchmark for streaming task understanding. 39 scenarios. 4 embodiments. 7 capabilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://continuity3.github.io/robochrono/assets/images/logo-transparent.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/images/logo-transparent.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#overview">Skip to content</a>
+  <div class="reading-track" aria-hidden="true"><span id="reading-progress"></span></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="RoboChrono home"><span class="original-logo-board"><img class="original-logo" src="assets/images/logo-transparent.png" alt="RoboChrono robot and clock logo" width="64" height="64"></span><span>RoboChrono<span class="brand-period">.</span></span></a>
+    <nav aria-label="Main navigation"><a href="#in-motion">Demos</a><a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#findings">Findings</a></nav>
+    <a class="header-link" href="https://github.com/continuity3/robochrono" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> REAL ROBOTS · STREAMING UNDERSTANDING</p>
+        <h1 id="hero-title">Robo<span>Chrono</span><span class="title-period">.</span></h1>
+        <p class="hero-subtitle">A Real Robot Benchmark for<br><span>Streaming Task Understanding</span></p>
+        <p class="hero-description">The world doesn’t wait for the video to end.<br>Can a model understand an action <em>as it unfolds?</em></p>
+        <div class="action-row"><a class="button button-primary" href="assets/paper/robochrono.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a><a class="button button-outline" href="https://huggingface.co/datasets/GIM-RoboLab/robochrono/tree/main" target="_blank" rel="noopener noreferrer">Explore the dataset <span aria-hidden="true">↗</span></a></div>
+        <a class="text-link hero-jump" href="#in-motion"><span class="play-icon" aria-hidden="true">▷</span> See the robots in action <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="stream-console">
+        <div class="console-bar"><span><i class="status-dot" aria-hidden="true"></i> OBSERVATION STREAM</span><span>TIANJI / CAM 01</span></div>
+        <div class="hero-feed"><video id="hero-video" poster="assets/images/tianji-hero.jpg" data-playable muted loop playsinline controls preload="auto" aria-label="Tianji stacking cubes, recorded preview at twice original speed"><source src="assets/videos/tianji-hero-2x.mp4" type="video/mp4"></video><div class="feed-corner top-left" aria-hidden="true"></div><div class="feed-corner bottom-right" aria-hidden="true"></div><span class="feed-label">STACK CUBES <span>2× PREVIEW</span></span><div class="scanline" aria-hidden="true"></div></div>
+        <div class="console-timeline"><div class="time-ticks" aria-hidden="true"><span>PAST</span><span>OBSERVATION HISTORY</span><span>NOW</span></div><div class="playback-track"><span id="hero-progress"></span></div><div class="console-bottom"><output id="hero-time" aria-live="off" aria-label="Video playback time">00:00 / —</output><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div></div>
+        <div class="console-caption"><span class="crosshair" aria-hidden="true">+</span> No future frames. Only the story so far.</div>
+      </div>
+      <div class="hero-coordinate" aria-hidden="true">01 / OBSERVE → REASON → ANTICIPATE</div>
+    </section>
 
-      <section id="overview" class="section overview-section">
-        <div class="section-heading left"><p class="eyebrow">Overview</p><h2>Temporal understanding grounded in real manipulation.</h2></div>
-        <div class="overview-layout">
-          <div class="overview-copy">
-            <p>RoboChrono is designed for models that must reason over an action as it unfolds—not only recognize an isolated image. It brings together synchronized robot observations, human egocentric demonstrations, and temporally grounded questions in one benchmark.</p>
-            <p>Task executions are collected through human teleoperation under a shared protocol. Repeated executions vary object configurations, motion trajectories, and interaction patterns within each task.</p>
-            <div class="stat-grid"><div><strong>39</strong><span>manipulation tasks</span></div><div><strong>1,816</strong><span>successful videos</span></div><div><strong>≈25h</strong><span>robot interaction</span></div><div><strong>4</strong><span>embodiment settings</span></div></div>
-          </div>
-          <figure class="figure-card overview-figure"><img src="assets/images/robochrono-overview.png" alt="RoboChrono overview showing model capability and benchmark coverage"><figcaption>RoboChrono links real-robot coverage to fine-grained temporal reasoning.</figcaption></figure>
-        </div>
-      </section>
+    <section class="team-section shell" aria-label="Authors and organizations">
+      <div class="team-heading"><span class="micro-label">THE PEOPLE BEHIND ROBOCHRONO</span><a href="#affiliations">13 affiliations <span aria-hidden="true">↓</span></a></div>
+      <div class="authors"><span class="equal-author">Yuzhou Wu<sup>1,*</sup></span><span class="equal-author">Longteng Fan<sup>1,*</sup></span><span class="equal-author">Zimeng Li<sup>2,*</sup></span><span class="equal-author">Yu Wanchan<sup>2,*</sup></span><span class="equal-author">Ting Zhang<sup>3,*</sup></span><span class="equal-author">Yiyang Ma<sup>4,*</sup></span><span class="equal-author">Shihao Li<sup>8,*</sup></span><span>Wei Ying<sup>5</sup></span><span>Jianbin Qin<sup>3</sup></span><span>Jiajian Jing<sup>2</sup></span><span>Fangwen Chen<sup>2</sup></span><span>Yifan Wu<sup>6</sup></span><span>Zichen Zhang<sup>1</sup></span><span>Ruiqi Yang<sup>1</sup></span><span>Weibin Kong<sup>7</sup></span><span>Yihang Xu<sup>1</sup></span><span>Haoran Liu<sup>6</sup></span><span>Zonghang He<sup>1</sup></span><span>Xuyang Liu<sup>9</sup></span><span>YiFan Xiong<sup>10</sup></span><span>Siteng Huang<sup>11</sup></span><span>Tao Xu<sup>10</sup></span><span class="corresponding-author">Zhuo Xu<sup>12,†</sup></span><span class="corresponding-author">Long Chen<sup>13,†</sup></span><span class="corresponding-author">Ruoxiang Li<sup>3,†</sup></span></div>
+      <div class="author-notes"><span><b>*</b> Equal contribution</span><span><b>†</b> Corresponding authors</span></div>
+      <details id="affiliations" class="affiliations"><summary>View all affiliations <span aria-hidden="true">+</span></summary><ol><li>Shanghai Jiao Tong University</li><li>Huazhong Agricultural University</li><li>Shenzhen University</li><li>Yanbian University</li><li>South China Agricultural University</li><li>Georgia Institute of Technology</li><li>Harbin Engineering University</li><li>University of Texas at Austin</li><li>Hong Kong Polytechnic University</li><li>Beijing Jiaotong University</li><li>Alibaba Group</li><li>Google</li><li>Xiaomi Corporation</li></ol></details>
+      <div class="partner-row"><p class="micro-label">REAL-WORLD PLATFORMS.<br>SHARED RESEARCH.</p><div class="partner-logos"><div class="partner-logo tianji-logo"><img src="assets/brands/tianji-logo.svg" alt="Tianji" width="210" height="60"></div><span class="partner-divider" aria-hidden="true">×</span><div class="partner-logo gim-logo"><img src="assets/brands/gim-logo.svg" alt="GIM" width="140" height="65"></div></div><span class="partner-note">Bringing temporal understanding<br>into the physical world.</span></div>
+    </section>
 
-      <section id="embodiments" class="section dark-section">
-        <div class="section-heading"><p class="eyebrow">Cross-embodiment data</p><h2>One benchmark, four ways to manipulate.</h2><p class="section-intro">The task set spans grasping, picking, placing, transferring, stacking, packaging, cleaning, and tool use with everyday objects, containers, tools, and packaged goods.</p></div>
-        <div class="embodiment-grid">
-          <article class="embodiment-card gim"><span class="card-number">01</span><h3>GIM gripper</h3><p>15 bimanual robot scenarios with external and wrist-mounted views.</p></article>
-          <article class="embodiment-card ego"><span class="card-number">02</span><h3>Ego hand</h3><p>5 first-person human-hand scenarios for natural hand-object interaction.</p></article>
-          <article class="embodiment-card tianji"><span class="card-number">03</span><h3>Tianji gripper</h3><p>14 teleoperated gripper scenarios with three synchronized cameras.</p></article>
-          <article class="embodiment-card dex"><span class="card-number">04</span><h3>Wuji dexterous hand</h3><p>5 robotic-hand scenarios for fine-grained manipulation.</p></article>
-        </div>
-        <div class="data-figures"><figure class="figure-card"><img src="assets/images/embodiment-and-actions.png" alt="Embodiment hierarchy, action vocabulary, and action distribution"><figcaption>Embodiment breadth and the long-tail action vocabulary.</figcaption></figure></div>
-      </section>
+    <section id="in-motion" data-nav-section class="motion-section" aria-labelledby="motion-heading">
+      <div class="shell motion-heading"><div><p class="eyebrow">A WORLD IN MOTION</p><h2 id="motion-heading">Small actions.<br><em>Endless stories.</em></h2></div><div class="motion-description"><p>Ten glimpses of real manipulation: making tea, packing, cleaning, and arranging. Watch the same world through different hands.</p><button id="gallery-toggle" type="button" aria-pressed="false">Pause video wall <span aria-hidden="true">Ⅱ</span></button></div></div>
+      <div id="video-wall" class="video-wall" aria-label="Moving gallery of recorded manipulation examples">
+<div class="film-lane"><div class="film-track"><div class="film-group">
+<button type="button" class="film-card landscape" data-demo="assets/videos/gallery/shoe-arranging.mp4" data-title="Packing shoes" data-kind="Robot · Grippers" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/gripper/shoe/videos/observation.images.left_eye/chunk-000/file-015.mp4" aria-label="Play Packing shoes, Robot · Grippers"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/shoe-arranging.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/shoe-arranging.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Packing shoes</strong><small>Robot · Grippers · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card landscape" data-demo="assets/videos/gallery/first-aid-packing.mp4" data-title="Packing a first-aid kit" data-kind="Robot · Grippers" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/gripper/Pack_a_first_aid_kit/videos/observation.images.left_eye/chunk-000/file-029.mp4" aria-label="Play Packing a first-aid kit, Robot · Grippers"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/first-aid-packing.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/first-aid-packing.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Packing a first-aid kit</strong><small>Robot · Grippers · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card square" data-demo="assets/videos/gallery/flower-picking.mp4" data-title="Arranging flowers" data-kind="Robot · Dexterous hands" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/hand/pick_flower/videos/observation.images.cam_color/chunk-000/file-015.mp4" aria-label="Play Arranging flowers, Robot · Dexterous hands"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/flower-picking.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/flower-picking.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Arranging flowers</strong><small>Robot · Dexterous hands · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card square" data-demo="assets/videos/gallery/sunglasses.mp4" data-title="Putting away sunglasses" data-kind="Robot · Dexterous hands" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/hand/sunglass/videos/observation.images.top/chunk-000/file-066.mp4" aria-label="Play Putting away sunglasses, Robot · Dexterous hands"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/sunglasses.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/sunglasses.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Putting away sunglasses</strong><small>Robot · Dexterous hands · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card square" data-demo="assets/videos/gallery/zip-bag.mp4" data-title="Organizing small items" data-kind="Robot · Grippers" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/gripper/zip_1/videos/observation.images.top/chunk-000/file-029.mp4" aria-label="Play Organizing small items, Robot · Grippers"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/zip-bag.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/zip-bag.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Organizing small items</strong><small>Robot · Grippers · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+</div></div></div>
+<div class="film-lane"><div class="film-track"><div class="film-group">
+<button type="button" class="film-card landscape" data-demo="assets/videos/gallery/tea-preparation.mp4" data-title="Preparing tea" data-kind="GIM · Dual-arm" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/gimme/tea2/videos/observation.images.top/chunk-000/file-000.mp4" aria-label="Play Preparing tea, GIM · Dual-arm"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/tea-preparation.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/tea-preparation.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Preparing tea</strong><small>GIM · Dual-arm · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card landscape" data-demo="assets/videos/gallery/gift-packing.mp4" data-title="Packing a gift" data-kind="GIM · Dual-arm" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/gimme/gift/videos/observation.images.top/chunk-000/file-041.mp4" aria-label="Play Packing a gift, GIM · Dual-arm"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/gift-packing.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/gift-packing.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Packing a gift</strong><small>GIM · Dual-arm · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card landscape" data-demo="assets/videos/gallery/table-cleaning.mp4" data-title="Washing dishes" data-kind="GIM · Dual-arm" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/gimme/wash/videos/observation.images.top/chunk-000/file-047.mp4" aria-label="Play Washing dishes, GIM · Dual-arm"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/table-cleaning.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/table-cleaning.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Washing dishes</strong><small>GIM · Dual-arm · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card square" data-demo="assets/videos/gallery/ego-flower.mp4" data-title="Arranging flowers" data-kind="Human · Egocentric" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/ego/flower/videos/observation.images.cam_color/chunk-000/file-017.mp4" aria-label="Play Arranging flowers, Human · Egocentric"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/ego-flower.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/ego-flower.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Arranging flowers</strong><small>Human · Egocentric · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+<button type="button" class="film-card square" data-demo="assets/videos/gallery/ego-stationery.mp4" data-title="Putting away a pen" data-kind="Human · Egocentric" data-source="https://huggingface.co/datasets/yyyyywv/egocentric/resolve/main/ego/pick_pen_box_ego/videos/observation.images.cam_color/chunk-000/file-008.mp4" aria-label="Play Putting away a pen, Human · Egocentric"><div class="film-image"><video data-playable muted loop playsinline preload="metadata" poster="assets/videos/gallery/ego-stationery.jpg" aria-hidden="true" tabindex="-1"><source src="assets/videos/gallery/ego-stationery.mp4" type="video/mp4"></video><div class="film-play" aria-hidden="true"><span>▷</span></div></div><div class="film-caption"><span><strong>Putting away a pen</strong><small>Human · Egocentric · 1×</small></span><span aria-hidden="true">↗</span></div></button>
+</div></div></div>
+      </div>
+      <div class="shell motion-footer"><span>HOVER TO PAUSE · SELECT A CLIP TO EXPLORE</span><a href="https://huggingface.co/datasets/yyyyywv/egocentric/tree/main" target="_blank" rel="noopener noreferrer">More recordings on Hugging Face ↗</a></div>
+      <div class="shell video-attribution">Preview excerpts from <a href="https://huggingface.co/datasets/yyyyywv/egocentric" target="_blank" rel="noopener noreferrer">yyyyywv/egocentric</a> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> · Trimmed and compressed for the web.</div>
+    </section>
 
-      <section id="coverage" class="section coverage-section">
-        <div class="section-heading">
-          <p class="eyebrow">Deduplicated dataset coverage</p>
-          <h2>Action diversity and execution scale.</h2>
-          <p class="section-intro">Statistics are computed from the formal deduplicated release: 39 tasks and 233 real subtasks only. Synthetic distractor actions are excluded.</p>
-        </div>
-        <div class="coverage-grid">
-          <article class="coverage-card action-card">
-            <div class="coverage-card-head"><div><p class="chart-kicker">Action vocabulary</p><h3>25 verbs, grounded in real subtasks.</h3></div><strong>233<small>real subtasks</small></strong></div>
-            <div class="bar-chart" aria-label="Top eight verb frequencies">
-              <div class="bar-row"><span>Pick</span><div><i style="--w:100%"></i></div><b>80</b></div>
-              <div class="bar-row"><span>Put</span><div><i style="--w:55%"></i></div><b>44</b></div>
-              <div class="bar-row"><span>Place</span><div><i style="--w:54%"></i></div><b>43</b></div>
-              <div class="bar-row"><span>Close</span><div><i style="--w:14%"></i></div><b>11</b></div>
-              <div class="bar-row"><span>Wipe</span><div><i style="--w:10%"></i></div><b>8</b></div>
-              <div class="bar-row"><span>Move</span><div><i style="--w:9%"></i></div><b>7</b></div>
-              <div class="bar-row"><span>Pour</span><div><i style="--w:8%"></i></div><b>6</b></div>
-              <div class="bar-row"><span>Open</span><div><i style="--w:6%"></i></div><b>5</b></div>
-            </div>
-            <p class="chart-note"><span></span> Top 8 verbs shown; 17 long-tail verbs account for the remaining 29 subtasks.</p>
-          </article>
-          <article class="coverage-card duration-card">
-            <div class="coverage-card-head"><div><p class="chart-kicker">Task duration</p><h3>From fast hand motions to multi-minute assembly.</h3></div><strong>49.60<small>seconds, mean</small></strong></div>
-            <div class="duration-chart" aria-label="Average duration of 39 deduplicated tasks, ordered from shortest to longest">
-              <div class="duration-bars">
-                <i style="--h:5" title="move_flower_hand · 9.54 s"></i><i style="--h:7" title="stack_cubes_hand · 15.03 s"></i><i style="--h:7" title="stow_sunglasses_tianjihand · 15.13 s"></i><i style="--h:9" title="pack_gift_hand · 17.93 s"></i><i style="--h:10" title="box_pen_hand · 19.61 s"></i><i style="--h:10" title="tidy_stationery_tianji · 19.71 s"></i><i style="--h:11" title="stack_cubes_tianjihand · 21.30 s"></i><i style="--h:11" title="sort_cubes_gim · 21.81 s"></i><i style="--h:12" title="box_pen_tianjihand · 21.90 s"></i><i style="--h:12" title="pack_gift_gim · 23.73 s"></i><i style="--h:12" title="box_shoes_gim · 23.87 s"></i><i style="--h:13" title="zip_pouch_tianji · 24.57 s"></i><i style="--h:13" title="cap_pen_gim · 25.98 s"></i><i style="--h:14" title="pack_sunglasses_hand · 26.32 s"></i><i style="--h:14" title="sort_cubes_tianji · 26.60 s"></i><i style="--h:15" title="box_shoe_tianji · 27.89 s"></i><i style="--h:15" title="pack_express_tianji · 28.06 s"></i><i style="--h:16" title="move_gift_tianjihand · 29.44 s"></i><i style="--h:16" title="move_flower_tianjihand · 29.66 s"></i><i style="--h:16" title="tidy_stationery_gim · 30.55 s"></i><i style="--h:17" title="bag_toy_gim · 31.59 s"></i><i style="--h:19" title="slip_tshirt_gim · 36.49 s"></i><i style="--h:19" title="zip_pouch_gim · 36.60 s"></i><i style="--h:20" title="stack_cubes_gim · 37.93 s"></i><i style="--h:23" title="pack_airpods_tianji · 45.97 s"></i><i style="--h:24" title="stack_cubes_tianji · 47.43 s"></i><i style="--h:26" title="pack_gift_tianji · 52.44 s"></i><i style="--h:30" title="wipe_plate_gim · 60.91 s"></i><i style="--h:34" title="wash_dishes_gim · 69.04 s"></i><i style="--h:34" title="wash_dishes_tianji · 70.40 s"></i><i style="--h:35" title="wipe_plate_tianji · 72.35 s"></i><i style="--h:37" title="make_tea_gim · 76.45 s"></i><i style="--h:39" title="brew_teabag_gim · 79.22 s"></i><i style="--h:41" title="pack_airpods_gim · 83.53 s"></i><i style="--h:47" title="make_tea_tianji · 95.65 s"></i><i style="--h:53" title="brew_teabag_tianji · 107.72 s"></i><i style="--h:57" title="takeout_trash_tianji · 117.04 s"></i><i style="--h:74" title="pack_aidkit_tianji · 150.50 s"></i><i style="--h:100" title="pack_aidkit_gim · 204.57 s"></i>
-              </div>
-              <div class="duration-axis"><span>9.54 s<br>shortest</span><span>39 tasks · sorted by mean execution duration</span><span>204.57 s<br>longest</span></div>
-            </div>
-            <p class="chart-note"><span></span> Durations come from annotated action-time endpoints, not decoded video-file length.</p>
-          </article>
-        </div>
-      </section>
+    <section id="overview" data-nav-section class="section shell">
+      <div class="section-heading reveal"><p class="eyebrow">01 / THE IDEA</p><div class="split-heading"><h2>Understanding is<br>a matter of <em>time.</em></h2><p>A single frame tells you what is visible. An unfolding interaction tells you what is happening. RoboChrono asks models to reason from the observations available up to a queried moment, without looking into the future.</p></div></div>
+      <div class="stats-strip reveal"><div><strong>39<span>↗</span></strong><span>Manipulation scenarios</span></div><div><strong>34,713</strong><span>Evaluation instances</span></div><div><strong>4</strong><span>Embodiment settings</span></div><div><strong>7</strong><span>Understanding tasks</span></div></div>
+      <figure class="paper-figure reveal"><div class="figure-topline"><span class="micro-label">ROBOCHRONO AT A GLANCE</span><button type="button" class="figure-zoom" data-figure="assets/figures/benchmark-overview.png" data-caption="RoboChrono benchmark overview">Expand figure <span aria-hidden="true">↗</span></button></div><div class="figure-surface"><img src="assets/figures/benchmark-overview.png" alt="Overview of RoboChrono embodiments and streaming task understanding capabilities" loading="lazy"></div><figcaption><span>OVERVIEW</span> Real manipulation. Diverse embodiments. A shared test of streaming task understanding.</figcaption></figure>
+    </section>
 
-      <section id="task-video" class="section task-section">
-        <div class="section-heading left task-heading"><p class="eyebrow">Same task, different embodiment</p><h2>Stack Cubes across all four settings.</h2><p class="section-intro">This shared task exposes the same pick-and-place goal under distinct robots, viewpoints, and interaction styles.</p></div>
-        <div class="video-grid">
-          <article class="sample-card multi-view"><div class="sample-copy"><p class="video-kicker">01 · GIM · Bimanual gripper</p><h3>Stack Cubes</h3><p>Three synchronized views show two robot arms coordinating coloured cube placement.</p></div><div class="triview"><div><span>Main view</span><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-gim-main-2x.mp4" type="video/mp4"></video></div><div><span>Left wrist</span><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-gim-wrist-left-2x.mp4" type="video/mp4"></video></div><div><span>Right wrist</span><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-gim-wrist-right-2x.mp4" type="video/mp4"></video></div></div></article>
-          <article class="sample-card multi-view"><div class="sample-copy"><p class="video-kicker">02 · Tianji · Gripper</p><h3>Stack Cubes</h3><p>Three synchronized viewpoints document the same teleoperated execution.</p></div><div class="triview"><div><span>Top view</span><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-tianji-top-2x.mp4" type="video/mp4"></video></div><div><span>Left wrist</span><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-tianji-wrist-left-2x.mp4" type="video/mp4"></video></div><div><span>Right wrist</span><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-tianji-wrist-right-2x.mp4" type="video/mp4"></video></div></div></article>
-          <div class="single-view-grid"><article class="sample-card"><div class="sample-copy"><p class="video-kicker">03 · Ego · Human hand</p><h3>Stack Cubes</h3><p>First-person demonstration captures natural hand motion.</p></div><div class="video-frame portrait"><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-ego-hand-2x.mp4" type="video/mp4"></video></div></article><article class="sample-card"><div class="sample-copy"><p class="video-kicker">04 · Wuji · Dexterous hand</p><h3>Stack Cubes</h3><p>Multi-finger hands support a tighter interaction space.</p></div><div class="video-frame"><video autoplay muted loop playsinline preload="metadata"><source src="assets/videos/stack-cubes-tianji-hand-2x.mp4" type="video/mp4"></video></div></article></div>
-        </div>
-      </section>
+    <section id="benchmark" data-nav-section class="section benchmark-section"><div class="shell">
+      <div class="section-heading reveal"><p class="eyebrow">02 / THE BENCHMARK</p><div class="split-heading"><h2>Seven tasks.<br>Three ways to <em>reason.</em></h2><p>From identifying the current action to locating it in time, each task isolates a different part of temporal understanding. Six tasks use multiple-choice evaluation; one measures action time localization.</p></div></div>
+      <div class="capability-grid reveal">
+        <article class="capability"><div class="capability-top"><span class="capability-number">01</span><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="7"/><path d="M24 2v9m0 26v9M2 24h9m26 0h9"/></svg></div><p class="micro-label">RECOGNITION</p><h3>Read the action.<br>Anticipate the next.</h3><p>Recognize actions, anticipate the next step, and identify a frame within the observed history.</p><ul><li><span>01</span> Current Action Recognition</li><li><span>02</span> Next Action Prediction</li><li><span>03</span> Goal-Conditioned Next Action Prediction</li><li><span>04</span> Frame Matching</li></ul></article>
+        <article class="capability"><div class="capability-top"><span class="capability-number">02</span><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="3" y="8" width="20" height="25"/><rect x="25" y="15" width="20" height="25"/><path d="m15 21 18 5m-6-6 6 6-8 2"/></svg></div><p class="micro-label">ALIGNMENT</p><h3>Connect the views.<br>Recover the order.</h3><p>Match observations across cameras and reconstruct the chronological sequence of video frames.</p><ul><li><span>05</span> View Matching</li><li><span>06</span> Frame Ordering</li></ul></article>
+        <article class="capability"><div class="capability-top"><span class="capability-number">03</span><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M3 30h42M9 24v12m10-17v17m10-24v24m10-17v17M10 10h24m-5-5 5 5-5 5"/></svg></div><p class="micro-label">TEMPORAL GROUNDING</p><h3>Find the action.<br>Pinpoint it in time.</h3><p>Identify when an action starts and ends within the observation history, using explicit temporal boundaries.</p><ul><li><span>07</span> Action Time Localization</li></ul><div class="metric-note">Evaluated with R@1 at tIoU ≥ 0.5.</div></article>
+      </div>
+      <div class="protocol-note"><span class="status-dot" aria-hidden="true"></span><p><strong>A causal observation boundary.</strong> Models see only the visual evidence available up to the query time. Future frames stay out of reach.</p><span class="protocol-arrow" aria-hidden="true">t ≤ t<sub>query</sub></span></div>
+    </div></section>
 
-      <section id="results" class="section results-section"><div class="results-copy"><p class="eyebrow">Benchmark analysis</p><h2>Evaluating the structure of temporal reasoning.</h2><p>RoboChrono measures six multiple-choice capabilities and one temporal-localization capability. The analyses reveal ranking consistency across evaluation sets, relationships between reasoning dimensions, and the value of making a task goal explicit.</p><div class="reasoning-list"><span>Current action</span><span>Next action</span><span>Goal-conditioned prediction</span><span>Frame matching</span><span>View matching</span><span>Frame ordering</span><span>Temporal localization</span></div></div><figure class="figure-card"><img src="assets/images/benchmark-results.png" alt="Benchmark result analysis across temporal reasoning dimensions"><figcaption>Cross-set consistency, dimension correlations, and goal-conditioned performance.</figcaption></figure></section>
+    <section id="explore" class="section shell">
+      <div class="section-heading reveal"><p class="eyebrow">FOUR EMBODIMENTS / ONE SHARED TASK</p><div class="split-heading"><h2>Same world.<br>Different <em>hands.</em></h2><p>Robot grippers, dexterous hands, and egocentric human demonstrations. Explore the shared “Stack Cubes” task across all four embodiment settings.</p></div></div>
+      <div class="embodiment-tabs" role="tablist" aria-label="Choose embodiment"><button id="tab-tianji" type="button" role="tab" aria-selected="true" aria-controls="embodiment-panel" data-embodiment="tianji"><span>01</span> Tianji gripper <i aria-hidden="true">↗</i></button><button id="tab-gim" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="embodiment-panel" data-embodiment="gim"><span>02</span> GIM gripper <i aria-hidden="true">↗</i></button><button id="tab-ego" type="button" role="tab" aria-selected="false" aria-controls="embodiment-panel" data-embodiment="ego" tabindex="-1"><span>03</span> Ego hand <i aria-hidden="true">↗</i></button><button id="tab-wuji" type="button" role="tab" aria-selected="false" aria-controls="embodiment-panel" data-embodiment="wuji" tabindex="-1"><span>04</span> Dexterous hand <i aria-hidden="true">↗</i></button></div>
+      <div id="embodiment-panel" class="embodiment-panel" role="tabpanel" aria-labelledby="tab-tianji" tabindex="0">
+        <div class="explorer-head"><div><p id="embodiment-kind" class="micro-label">TIANJI GRIPPER / THREE CAMERA VIEWS</p><h3 id="embodiment-title">Tianji gripper</h3><p id="embodiment-description">Teleoperated gripper demonstrations capture the same execution from a top camera and two wrist-mounted cameras.</p></div><div class="scenario-count"><strong id="embodiment-count">14</strong><span>scenarios</span></div></div>
+        <div id="embodiment-videos" class="cameras"><div class="camera camera-main"><span class="camera-label">01 / Top view</span><video data-playable muted loop playsinline controls preload="metadata" aria-label="Tianji top view"><source src="assets/videos/stack-cubes-tianji-top-2x.mp4" type="video/mp4"></video></div><div class="camera camera-secondary"><span class="camera-label">02 / Left wrist</span><video data-playable muted loop playsinline controls preload="metadata" aria-label="Tianji left wrist view"><source src="assets/videos/stack-cubes-tianji-wrist-left-2x.mp4" type="video/mp4"></video></div><div class="camera camera-secondary"><span class="camera-label">03 / Right wrist</span><video data-playable muted loop playsinline controls preload="metadata" aria-label="Tianji right wrist view"><source src="assets/videos/stack-cubes-tianji-wrist-right-2x.mp4" type="video/mp4"></video></div></div>
+        <div class="explorer-footer"><span><i class="status-dot" aria-hidden="true"></i> REAL RECORDED EXECUTIONS</span><span>Stack Cubes · previews at 2× speed</span></div>
+      </div>
+      <noscript><p>Other recordings: <a href="assets/videos/stack-cubes-gim-main-2x.mp4">GIM gripper</a> · <a href="assets/videos/stack-cubes-ego-hand-2x.mp4">Ego hand</a> · <a href="assets/videos/stack-cubes-tianji-hand-2x.mp4">Dexterous hand</a>.</p></noscript>
+      <figure class="paper-figure dataset-figure reveal"><div class="figure-topline"><span class="micro-label">THE SHAPE OF THE DATASET</span><button type="button" class="figure-zoom" data-figure="assets/figures/task-coverage.png" data-caption="RoboChrono embodiment and action coverage">Expand figure <span aria-hidden="true">↗</span></button></div><div class="figure-surface"><img src="assets/figures/task-coverage.png" alt="Distribution of RoboChrono scenarios, embodiments, and manipulation actions" loading="lazy"></div><figcaption><span>DATASET</span> 1,816 successful videos. Approximately 25 hours of real manipulation.</figcaption></figure>
+    </section>
 
-      <section id="citation" class="section citation-section"><p class="eyebrow">Citation</p><h2>Use RoboChrono in your research.</h2><pre><code>@misc{robochrono2026,
-  title={RoboChrono: A Real-Robot Benchmark for Streaming Task Understanding},
-  author={Anonymous Authors},
-  year={2026},
-  note={Project page}
-}</code></pre></section>
-    </main>
-    <footer class="footer"><span class="brand-mark">R</span> RoboChrono <span>·</span> Real robot temporal understanding</footer>
-    <script src="script.js"></script>
-  </body>
+    <section id="findings" data-nav-section class="section findings-section"><div class="shell">
+      <div class="section-heading reveal"><p class="eyebrow">04 / WHAT WE LEARNED</p><div class="split-heading"><h2>Seeing isn’t the same<br>as understanding <em>time.</em></h2><p>Zero-shot evaluation of 18 vision-language models reveals a capability gap: strong visual matching does not consistently translate into strong temporal ordering.</p></div></div>
+      <div class="findings-grid reveal"><article class="finding-card"><p class="micro-label">VISUAL MATCHING → TEMPORAL ORDERING</p><h3>The temporal gap.</h3><p class="finding-description">Accuracy on Frame Matching vs. Frame Ordering.</p><div class="comparison"><div class="model-name">GPT-6-Astra</div><div class="result-row"><span>Frame Matching</span><div><i style="--value:98.3%"></i></div><b>98.3<small>%</small></b></div><div class="result-row ordering"><span>Frame Ordering</span><div><i style="--value:68.3%"></i></div><b>68.3<small>%</small></b></div><div class="model-name second-model">RynnBrain1.1-122B-A10B</div><div class="result-row"><span>Frame Matching</span><div><i style="--value:95.4%"></i></div><b>95.4<small>%</small></b></div><div class="result-row ordering"><span>Frame Ordering</span><div><i style="--value:32.9%"></i></div><b>32.9<small>%</small></b></div></div><p class="finding-footnote">Paper-reported results (Table 3). Evaluation coverage and aggregation vary by model; see the paper for details.</p></article><article class="finding-card ablation-card"><p class="micro-label">WHAT IF THE MODEL CANNOT SEE?</p><h3>Different tasks.<br>Different evidence.</h3><p class="finding-description">Accuracy change when visual observations are removed.</p><div class="ablation-numbers"><div><strong>−22.1<span>pp</span></strong><p>Current Action<br>Recognition</p></div><div><strong>−0.7<span>pp</span></strong><p>Next Action<br>Prediction</p></div></div><p class="ablation-takeaway">Next-action prediction can draw on task and action priors, even when visual evidence is unavailable.</p><p class="finding-footnote">Mean drops across five open-weight models on a balanced 312-stem subset; percentage points (pp).</p></article></div>
+      <figure class="paper-figure reveal"><div class="figure-topline"><span class="micro-label">CAPABILITY PROFILES & GOAL CONDITIONING</span><button type="button" class="figure-zoom" data-figure="assets/figures/model-capabilities-table3.svg" data-caption="Model capability profiles and the effect of goal conditioning">Expand figure <span aria-hidden="true">↗</span></button></div><div class="figure-surface"><img src="assets/figures/model-capabilities-table3.svg" alt="Paper plots comparing recognition and alignment, frame matching and ordering, and goal-conditioned prediction" loading="lazy"></div><figcaption><span>ANALYSIS</span> Replotted from Table 3: capability profiles and goal conditioning across 18 models. Reported aggregation is retained; evaluation coverage varies by model.</figcaption></figure>
+      <figure class="paper-figure reveal"><div class="figure-topline"><span class="micro-label">PLATFORMS & EVIDENCE ABLATIONS</span><button type="button" class="figure-zoom" data-figure="assets/figures/platform-and-ablation.svg" data-caption="Platform comparison and visual and temporal evidence ablations">Expand figure <span aria-hidden="true">↗</span></button></div><div class="figure-surface"><img src="assets/figures/platform-and-ablation.svg" alt="Paper plots comparing GIM and Tianji performance and the effects of removing or shuffling visual inputs" loading="lazy"></div><figcaption><span>ABLATIONS</span> How platform, visual evidence, and temporal order affect model performance.</figcaption></figure>
+      <a class="text-link results-link" href="assets/paper/robochrono.pdf#page=6" target="_blank" rel="noopener">Explore the full evaluation in the paper <span aria-hidden="true">↗</span></a>
+    </div></section>
+
+    <section id="resources" class="section shell resources-section">
+      <div class="resources-intro reveal"><p class="eyebrow">05 / BUILD WITH ROBOCHRONO</p><h2>Give your model<br>a sense of <em>time.</em></h2><p>Explore the data, examine the evaluation, and build toward better understanding of real-world robot interaction.</p><div class="resource-links"><a href="assets/paper/robochrono.pdf" target="_blank" rel="noopener"><span>01</span> Paper <span aria-hidden="true">↗</span></a><a href="https://huggingface.co/datasets/GIM-RoboLab/robochrono/tree/main" target="_blank" rel="noopener noreferrer"><span>02</span> Dataset on Hugging Face <span aria-hidden="true">↗</span></a><a href="https://github.com/continuity3/robochrono" target="_blank" rel="noopener noreferrer"><span>03</span> Project repository <span aria-hidden="true">↗</span></a></div></div>
+      <div id="citation" class="citation-card reveal"><div class="citation-heading"><p class="micro-label">CITE ROBOCHRONO</p><button id="copy-citation" type="button">Copy BibTeX <span aria-hidden="true">⧉</span></button></div><pre><code id="bibtex">@misc{wu2026robochrono,
+  title = {RoboChrono: A Real Robot Benchmark
+           for Streaming Task Understanding},
+  author = {Yuzhou Wu and Longteng Fan and
+    Zimeng Li and Yu Wanchan and Ting Zhang and
+    Yiyang Ma and Shihao Li and Wei Ying and
+    Jianbin Qin and Jiajian Jing and Fangwen Chen and
+    Yifan Wu and Zichen Zhang and Ruiqi Yang and
+    Weibin Kong and Yihang Xu and Haoran Liu and
+    Zonghang He and Xuyang Liu and YiFan Xiong and
+    Siteng Huang and Tao Xu and Zhuo Xu and
+    Long Chen and Ruoxiang Li},
+  year = {2026},
+  url = {https://continuity3.github.io/robochrono/}
+}</code></pre><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div>
+    </section>
+  </main>
+  <footer class="footer shell"><a class="brand" href="#top">RoboChrono<span class="brand-period">.</span></a><span>Real robots. A world in motion.</span><a href="#top">Back to the present <span aria-hidden="true">↑</span></a></footer>
+  <dialog id="figure-dialog" aria-label="Expanded paper figure"><button id="figure-close" type="button" aria-label="Close expanded figure">Close ×</button><img id="figure-full" alt=""><p id="figure-caption"></p></dialog>
+  <dialog id="demo-dialog" aria-labelledby="demo-title"><div class="demo-dialog-head"><div><p id="demo-kind" class="micro-label"></p><h3 id="demo-title"></h3></div><button id="demo-close" type="button" aria-label="Close video preview">Close ×</button></div><video id="demo-video" controls playsinline muted preload="none"></video><div class="demo-dialog-footer"><span>Recorded dataset preview</span><a id="demo-source" target="_blank" rel="noopener noreferrer">View source recording ↗</a></div></dialog>
+  <script src="script.js"></script>
+</body>
 </html>

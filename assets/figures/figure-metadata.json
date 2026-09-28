@@ -1,0 +1,14 @@
+{
+  "benchmark-overview.png": {
+    "source": "RoboChrono_ICLR (6).pdf, Figure 1, page 2",
+    "width": 1916,
+    "height": 1018,
+    "caption": "Overview of RoboChrono. Left: Performance profiles of four representative multimodal models across the six multiple-choice evaluation tasks. Center: Distribution of 34,713 evaluation instances across seven tasks. Right: Comparison of data collection and annotation attributes across representative robot benchmarks and datasets."
+  },
+  "task-coverage.svg": {
+    "source": "RoboChrono_ICLR (6).pdf, Figure 2, page 4",
+    "width": 396,
+    "height": 93,
+    "caption": "Overview of the task coverage in RoboChrono. The benchmark includes diverse manipulation objects and action primitives drawn from 39 real-world manipulation scenarios."
+  }
+}
