@@ -35,7 +35,7 @@ The publication target is [continuity3.github.io/robochrono](https://continuity3
 
 The capability plot is redrawn from all 18 Table 3 rows because the supplied Figure 4 plots the Astra points inconsistently with that table. The original supplied figure remains available in the assets; the displayed `model-capabilities-table3.svg` explicitly identifies its source and has a companion JSON data file.
 
-The dataset link points to the existing GIM-RoboLab RoboChrono collection. Paper and GitHub entries are inactive **Coming soon** labels until the paper and research code are ready for release. The public website source repository remains available separately.
+The dataset links point to [gimai/RC-GIM on Hugging Face](https://huggingface.co/datasets/gimai/RC-GIM). Paper and GitHub entries are inactive **Coming soon** labels until the paper and research code are ready for release. The public website source repository remains available separately.
 
 ## Browser checks
 
