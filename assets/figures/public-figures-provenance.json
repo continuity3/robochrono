@@ -1,0 +1,23 @@
+{
+  "overview": {
+    "source": "RoboChrono public preprint, Figure 1",
+    "pdf_sha256": "7a39396744c8ccc4261979a776cb5e603c71b7accfd8c6edc86a959b3143df3b",
+    "file": "benchmark-overview-public.png",
+    "source_size_pt": [
+      841.171,
+      446.927
+    ],
+    "render_scale": 3
+  },
+  "diagnostic": {
+    "source": "RoboChrono public preprint, Figure 4",
+    "pdf_sha256": "4946f21550062d3913ca25a056f9323dc97878ac4e7ad833f746b032a140c21d",
+    "file": "model-capabilities-public.svg",
+    "source_size_pt": [
+      486.0,
+      302.4
+    ],
+    "data": "model-capabilities-public.json"
+  },
+  "note": "Direct exports of final public-paper figures; no scientific content was changed during web export."
+}
