@@ -38,6 +38,14 @@ The displayed `model-capabilities-public.svg` comes from the public preprint’s
 
 The dataset entries list [Tianji Dataset (gimai/RC-Tianji)](https://huggingface.co/datasets/gimai/RC-Tianji) first, followed by [GIM Dataset (gimai/RC-GIM)](https://huggingface.co/datasets/gimai/RC-GIM), in both the hero and resources sections. GitHub entries link to the benchmark repository, [mfan-res/ROBOCHRONO](https://github.com/mfan-res/ROBOCHRONO). All three Paper entries open the public preprint in the benchmark repository. The public website source repository remains available separately.
 
+## Search discovery
+
+The page declares `https://continuity3.github.io/robochrono/` as its canonical URL. `sitemap.xml` lists that same URL; section fragments such as `#in-motion` are anchors within this one page, not separate pages to submit.
+
+To inspect Google's actual indexing status, use a verified URL-prefix property for `https://continuity3.github.io/robochrono/` in [Google Search Console](https://search.google.com/search-console). Inspect the homepage, run the live URL test, and request indexing if eligible. Submit `https://continuity3.github.io/robochrono/sitemap.xml` in the Sitemaps report. A sitemap helps discovery but does not guarantee indexing or rankings.
+
+The effective robots policy is at the hostname root, `https://continuity3.github.io/robots.txt`, which belongs to the separate personal-site repository. A `robots.txt` inside `/robochrono/` would not control crawling. This project does not alter the personal site's crawler policy or sitemap.
+
 ## Browser checks
 
 Verified in Chrome at 320, 390, 768, 1024, and 1440 px widths, including keyboard tab switching, image dialogs, citation copying, video playback controls, reduced motion, and readable content without JavaScript.
